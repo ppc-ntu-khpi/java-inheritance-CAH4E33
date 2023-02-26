@@ -1,28 +1,130 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-f4981d0f882b2a3f0472912d15f9806d57e124e0fc890972558857b51b24a6f9.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=10177958)
 # Практична робота "Реалізація успадкування"
-Цей репозиторій містить приклад виконання та інструкції для виконання практичної роботи з наслідування в JAVA. 
 
-Для прикладу я змоделював **звичайнісінького кота**😉
 
-<img src="https://github.com/ppc-ntu-khpi/Inheritance-Starter/blob/master/images/cat.jpg" width="100%"/>
-<img src="https://github.com/ppc-ntu-khpi/Inheritance-Starter/blob/master/images/Cat-Diagram.png" width="100%"/>
+<img src="https://github.com/ppc-ntu-khpi/java-inheritance-CAH4E33/blob/master/image/tiger1.png" width="100%"/>
+<img src="https://github.com/ppc-ntu-khpi/java-inheritance-CAH4E33/blob/master/image/Tiger.png" width="100%"/>
 
-## В рамках практичної роботи ви маєте зробити наступне:
-1. подумайте, які риси та поведінка притаманні всім без винятку тваринам 
-2. оберіть будь-яку тварину (не стримуйте свою фантазію😉)
-2. з допомогою **easyUML** для Netbeans або **StarUML** створіть діаграму класів для обраної тварини. Ви маєте отримати шось подібне до прикладу з цього репозиторію.
-3. згенеруйте каркасний код на основі діаграми
-4. допрацюйте код - *всі методи мають виводити на екран повідомлення про те, що робить тварина!*
-5. створіть тестовий клас, в методі **main** якого створіть об'єкт класу тварини та викличіть його методи
-3. завантажте ваш код до до теки **src** вашого репозиторію (замінивши код прикладу). Експортовану (в PNG) діаграму завантажте в теку **images** та додайте в **Readme** (не забудьте в ньому описати що за тварину ви обрали)
-4. здайте завдання. **УВАГА! Не забудьте, здаючи завдання через Google Classroom, вказати посилання на Ваш репозиторій!**
 
-## Відеодемонстрація виконання практичної
+## Код програми
 
-<p align="center">
-<a href="https://www.youtube.com/watch?v=SFSC1omkE8Q&feature=youtu.be" target="_blank"><img src="https://img.youtube.com/vi/SFSC1omkE8Q/0.jpg"/></a>
-</p>
+* Клас Animal
+```java
+package domain;
 
-Не забувайте, що ви можете обговорювати завдання в девелоперському мессенджері **Gitter** - у відповідній [чат-кімнаті](https://gitter.im/PPC-SE-2020/OOP?utm_source=share-link&utm_medium=link&utm_campaign=share-link).
+public class Animal {
 
-[![Gitter](https://badges.gitter.im/PPC-SE-2020/OOP.svg)](https://gitter.im/PPC-SE-2020/OOP?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+    protected String name;
+
+    protected  int weight;
+
+    protected  int age;
+
+    protected  String gender;
+
+    protected  Boolean hungry;
+
+    public Animal() {
+        name = "Animal";
+        weight = 50;
+        age = 15;
+        gender = "female";
+        hungry = true;
+        
+    }
+
+    public void eat() {
+        System.out.println("Animal eating...");
+    }
+
+    public void sleep() {
+        System.out.println("Animal sleeping...");
+    }
+
+    public void play() {
+        System.out.println("Animal playing...");
+    }
+
+    @Override
+    public String toString() {
+        return "Animal" + "\nname = " + name + ", \nweight = " + weight + " kg, "
+                + "\nage = " + age + ", \ngender = " + gender + ", \nhungry = " + hungry+ ",";
+    }
+
+   
+}
+```
+* Клас Tiger
+```java
+package domain;
+
+public class Tiger extends Animal {
+
+    private String mood;
+
+    public Tiger(String name, int weight, int age, String gender, Boolean hungry, String mood) {
+        this.name=name;
+        this.weight=weight;
+        this.age=age;
+        this.gender=gender;
+        this.hungry=hungry;
+        this.mood=mood;
+        
+    }
+
+    public Tiger() {
+        this("Vasya", 150, 20, "male",true,"good");
+    }
+
+    public Tiger(String name) {
+        this(name, 150, 20, "male", true, "good");
+    }
+    
+    
+
+    public void hunt() {
+        System.out.println("Tiger hunting...");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+"\nmood: "+this.mood+"\n";
+    }
+
+    @Override
+    public void play() {
+       System.out.println("Tiger playing...");
+    }
+
+    @Override
+    public void sleep() {
+         System.out.println("Tiger sleeping...");
+    }
+
+    @Override
+    public void eat() {
+       System.out.println("Tiger eating...");
+    }
+    
+    
+}
+```
+* Клас TestAnimal
+```java
+package test;
+
+import domain.Tiger;
+
+public class TestAnimal {
+
+    public static void main(String[] args) {
+        Tiger tiger = new Tiger("Petya");
+        System.out.println(tiger);
+        tiger.hunt();
+        tiger.eat();
+        tiger.play();
+        tiger.sleep();
+    }
+}
+```
+
+
