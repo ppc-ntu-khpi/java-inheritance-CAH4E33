@@ -1,11 +1,8 @@
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-f4981d0f882b2a3f0472912d15f9806d57e124e0fc890972558857b51b24a6f9.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=10177958)
 # Практична робота "Реалізація успадкування"
-Цей репозиторій містить приклад виконання та інструкції для виконання практичної роботи з наслідування в JAVA. 
 
-Для прикладу я змоделював **звичайнісінького кота**😉
 
 <img src="https://github.com/ppc-ntu-khpi/Inheritance-Starter/blob/master/images/cat.jpg" width="100%"/>
-<img src="https://github.com/ppc-ntu-khpi/Inheritance-Starter/blob/master/images/Cat-Diagram.png" width="100%"/>
+<img src="https://github.com/ppc-ntu-khpi/Inheritance-Starter/blob/master/image/Tiger.png" width="100%"/>
 
 ## В рамках практичної роботи ви маєте зробити наступне:
 1. подумайте, які риси та поведінка притаманні всім без винятку тваринам 
